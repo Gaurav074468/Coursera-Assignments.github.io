@@ -1,66 +1,86 @@
-*{
-    box-sizing : border-box;
-}
-h1 {
-margin-bottom: 15px;
-text-align: center;
-
-}
-p{
-    border : 3px solid black;
-    background-color: grey;
-    width: 90%;
-    height: 150px;
-    margin-right: auto;
-    margin-left: auto;
-    font-family:  Helvetica;
-    color: black;
-}
-/*simple responsive framework. */
-.row { 
-
-width: 100%;
-}
-
-/****Large devices -for desktop ****/
-@media (min-width: 1200px)
-{
-    .col-lg-4,.col-lg-6,.col-lg-12
-    {
-        float: left;
+ .container {
+        margin-top: 20px;
+        overflow: hidden; /* Clearfix for float layout */
     }
-    .col-lg-4{
-        width: 33.33%;
+    .box {
+        width: 100%; /* Full width on small screens */
+        border: 1px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px; /* Adjust margin for spacing */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+        background-color: grey;
     
     }
-    .col-lg-6{
-        width: 50%;
-     
-    }
-    .col-lg-12{
-        width: 100%;
+    .box h2 {
         
-    }
-}
-
-/****medium devices -for tablets ****/
-@media (min-width: 950px)  and (max-width: 1199px)
-{
-    .col-md-4,.col-md-6,.col-md-12
-    {
-        float: left;
-
-    }
-    .col-md-4{
-        width: 33.33%;
+        position: relative;
+        margin-top: 0%;
+        margin-left:auto;
+        padding: 0; /* Optional: Add padding if needed */
+        width: fit-content; /* Make the width fit the content */
+        color: #333;
+        border: 1px solid #333; /* Add a border to the <h2> */
+        padding: 5px 10px;
+        background-color: red;
+        font-size: medium;
+       
+        
     
     }
-    .col-md-6{
-        width: 50%;
-      
+    .box p {
+        position: relative;
+        margin-bottom: 0%;
+        font-size:smaller;
+        padding: 10px;
+        line-height: 1.6;
+        color:black;
+        font-family:'Courier New', Courier, monospace
+        background-color: grey;
+    
+    }   
+        
+    .box:nth-child(1) h2 {
+        background-color:#f19999;
     }
-    .col-md-12{
-        width: 100%;
-      
+    .box:nth-child(2) h2 {
+        background-color: red;
+        color: white;
     }
-}
+    .box:nth-child(3) h2 {
+        background-color: rgb(185, 183, 46);
+    }
+    
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+        font-size:xx-large;
+    }
+
+    /* Responsive layout for tablets */
+    @media (min-width: 600px) and (max-width: 991px) {
+        .box {
+            width: 48%; /* Two columns on tablets */
+            float: left;
+            margin-right: 4%;
+        }
+        .box:nth-child(2n) {
+            margin-right: 0; /* Remove right margin from every second box */
+        }
+        .box:nth-child(3n){
+            width: 100%;
+            float: Auto;
+
+        }
+    }
+
+    /* Responsive layout for desktops */
+    @media (min-width: 992px) {
+        .box {
+            width: 30%; /* Three columns on desktops */
+            float: left;
+            margin-right: 3.33%;
+        }
+        .box:nth-child(3n) {
+            margin-right: 0; /* Remove right margin from every third box */
+        }
+    }
